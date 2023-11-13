@@ -1,28 +1,26 @@
 from varasto import Varasto
 
-
-def main():
-    mehua = Varasto(100.0)
-    olutta = Varasto(100.0, 20.2)
-    fooo = 0
-
+def tulosta_varastot(mehu, olut):
     print("Luonnin jälkeen:")
-    print(f"Mehuvarasto: {mehua}")
-    print(f"Olutvarasto: {olutta}")
+    print(f"Mehuvarasto: {mehu}")
+    print(f"Olutvarasto: {olut}")
 
+def tulosta_olut_getterit(olut):
     print("Olut getterit:")
-    print(f"saldo = {olutta.saldo}")
-    print(f"tilavuus = {olutta.tilavuus}")
-    print(f"paljonko_mahtuu = {olutta.paljonko_mahtuu()}")
+    print(f"saldo = {olut.saldo}")
+    print(f"tilavuus = {olut.tilavuus}")
+    print(f"paljonko_mahtuu = {olut.paljonko_mahtuu()}")
 
+def tulosta_mehu_setterit(mehu):
     print("Mehu setterit:")
     print("Lisätään 50.7")
-    mehua.lisaa_varastoon(50.7)
-    print(f"Mehuvarasto: {mehua}")
+    mehu.lisaa_varastoon(50.7)
+    print(f"Mehuvarasto: {mehu}")
     print("Otetaan 3.14")
-    mehua.ota_varastosta(3.14)
-    print(f"Mehuvarasto: {mehua}")
+    mehu.ota_varastosta(3.14)
+    print(f"Mehuvarasto: {mehu}")
 
+def tulosta_virhetilanteita():
     print("Virhetilanteita:")
     print("Varasto(-100.0);")
     huono = Varasto(-100.0)
@@ -32,32 +30,14 @@ def main():
     huono = Varasto(100.0, -50.7)
     print(huono)
 
-    print(f"Olutvarasto: {olutta}")
-    print("olutta.lisaa_varastoon(1000.0)")
-    olutta.lisaa_varastoon(1000.0)
-    print(f"Olutvarasto: {olutta}")
+def main():
+    mehua = Varasto(100.0)
+    olutta = Varasto(100.0, 20.2)
 
-    print(f"Mehuvarasto: {mehua}")
-    print("mehua.lisaa_varastoon(-666.0)")
-    mehua.lisaa_varastoon(-666.0)
-    print(f"Mehuvarasto: {mehua}")
-
-    print(f"Olutvarasto: {olutta}")
-    print("olutta.ota_varastosta(1000.0)")
-    saatiin = olutta.ota_varastosta(1000.0)
-    print(f"saatiin {saatiin}")
-    print(f"Olutvarasto: {olutta}")
-
-    print(f"Mehuvarasto: {mehua}")
-    print("mehua.otaVarastosta(-32.9)")
-    saatiin = mehua.ota_varastosta(-32.9)
-    print(f"saatiin {saatiin}")
-    print(f"Mehuvarasto: {mehua}")
-
-    if mehua < 100:
-        if mehua > 100:
-            if mehua == 0:
-                print("mahdoton lauseke") #rikkomista
+    tulosta_varastot(mehua, olutta)
+    tulosta_olut_getterit(olutta)
+    tulosta_mehu_setterit(mehua)
+    tulosta_virhetilanteita()
 
 if __name__ == "__main__":
     main()
