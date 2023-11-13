@@ -4,6 +4,7 @@ from varasto import Varasto
 def main():
     mehua = Varasto(100.0)
     olutta = Varasto(100.0, 20.2)
+    fooo = 0
 
     print("Luonnin jälkeen:")
     print(f"Mehuvarasto: {mehua}")
@@ -53,6 +54,10 @@ def main():
     print(f"saatiin {saatiin}")
     print(f"Mehuvarasto: {mehua}")
 
+    if mehua < 100:
+        if mehua > 100:
+            if mehua == 0:
+                print("mahdoton lauseke") #rikkomista
 
 if __name__ == "__main__":
     main()
