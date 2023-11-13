@@ -33,7 +33,6 @@ def tulosta_virhetilanteita():
 def main():
     mehua = Varasto(100.0)
     olutta = Varasto(100.0, 20.2)
-    fooo = "virhetesti"
 
     tulosta_varastot(mehua, olutta)
     tulosta_olut_getterit(olutta)
